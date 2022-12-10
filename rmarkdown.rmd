@@ -1,0 +1,114 @@
+---
+title: "R markdown Tutorials"
+author: "Isaac Asiedu"
+date: "2022-12-10"
+output: 
+  html_document: 
+    highlight: textmate
+    theme: cerulean
+---
+
+## Introduction
+
+R Markdown is a tool that allows you to write and compile documents that include live R code, formatted text, and visualizations in a single document.
+
+To use R Markdown, you first need to install the r markdown package in R. This can be done by running the following code in the R console:
+
+`install.packages("rmarkdown")`
+
+`library(rmarkdown)`
+
+Once you have the package installed, you can create a new R Markdown file using the `rmarkdown::draft()` function. This will open up a template file in your default text editor, where you can start writing your document.
+
+Alternatively, you can create a new R Markdown file by clicking on the "File" menu in RStudio and selecting "New File" followed by "R Markdown".
+
+In the resulting dialog box, you can choose a template for your document, such as a basic document, a presentation, or a report. You can also choose a format for the output, such as HTML, PDF, or Word.
+
+Once you have selected your options, click "OK" to create the R Markdown file. This will open a new document in RStudio with the  structure between the 3 dashes at the first session of this text.
+
+
+The first section of the document, between the three dashes (---), is called the *YAML header* and contains metadata about the document. In this section, you can specify the title, author, date, and output format for your document. R Studio can generate these automatically.
+
+Below the YAML header, you can write your document using a mixture of formatted text, R code, and visualizations. 
+
+R Markdown files consist of two main parts: the text of the document, written in the Markdown markup language, and the code chunks, which are blocks of R code that can be executed and included in the document. 
+
+To include R code in your document, simply enclose it in two backticks (```) followed by "r" on the same line. For example:
+
+```{r}
+x <- (2:23)
+
+mean(x)
+
+```
+
+
+To compile the report, click the "Knit" button at the top of the editor. This will generate an HTML file containing your report since the YAML indicates an HTML output.
+
+## Reporting
+
+*Summarize the data
+
+```{r}
+summary(cars)
+
+```
+
+**Plot the data**
+
+```{r, echo=FALSE}
+plot(cars)
+
+```
+
+The `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+**Another way to select code chunk and Knit**
+
+- Code Chunk :On the top tab to the right, click on +C and select R
+
+- Knit: CTRL + SHIFT + K
+
+```{r}
+paste("Hello World")
+```
+ 
+
+## Customization
+
+To make the output a bit customized, go to the gear icon and select
+`output options` change the theme to `celulean`  and  select `number section headings`
+You may change the `syntax highlighting` to `monochrome` or your choice.
+You may click to include a `table of contents`.
+
+## Markdown Background Information
+
+**What is Markdown**
+
+John Grubber invented the **Markdown Language** in 2004. You can use it as a _markup language_ to add formatting to plain text documents.It is now one of the world’s most popular markup languages. A _markup language_ uses a collection of symbols to govern the structure, style, and relationships between text elements in a document. *Standard Generalized Markup Language* (`SGML`), *Hypertext Markup Language* (`HTML`), and *Extensible Markup Language* (`XML`) are the most widely used markup languages.  A document that has been marked up includes two types of text: text that will be displayed and markup language for that presentation.
+
+**Uses of Markdown**
+
+- Everything can be written in markdown. Websites, documents, notes, publications, presentations, emails, and technical documentation are all created with it.
+
+- Markdown is transferable. Almost any program can be used to open files using Markdown formatting. You can import your Markdown files into another Markdown application if you decide you don't like the one you're presently using. The use of word processing programs like Microsoft Word, which lock your writing into a proprietary file format, is in stark contrast.
+
+- Markdown is cross-platform. Any device with any operating system can produce Markdown-formatted text.
+
+- Future-proofing using markdown. You will still be able to read your Markdown-formatted material using a text editing application even if the program you're utilizing ceases functioning at some point in the future.
+
+**How it all works**
+
+When you write in Markdown, the text is stored in a file that has an **.md** or **.markdown extension**. Markdown applications use something called a Markdown processor to take the Markdown-formatted text and output it to HTML. At that point, your document can be viewed in a browser or combined with a style sheet and printed.
+
+
+## Session Info:
+
+It is always important to end your code chunk with a session info
+
+```{r}
+sessionInfo()
+```
+
+
+
